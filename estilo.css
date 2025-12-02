@@ -1,0 +1,323 @@
+/* ==================================== */
+/* 1. VARIABLES GLOBALES Y RESET BÁSICO */
+/* ==================================== */
+:root {
+    /* Colores Base del Noticiero */
+    --color-principal: #007bff; /* Azul Audaz (Para botones y enlaces) */
+    --color-secundario: #17a2b8; /* Cyan (Para hover) */
+    --color-fondo: #f8f9fa; /* Fondo General (Gris muy claro) */
+    --color-texto: #343a40; /* Gris Oscuro (Texto Principal) */
+    --color-texto-claro: #ffffff; /* Blanco (Texto en fondo oscuro) */
+    --color-header-bg: #212529; /* Fondo de la cabecera (Negro/Gris muy oscuro) */
+    
+    /* Colores de ACENTO por SECCIÓN (Se usa para los títulos de sección) */
+    --acento-politica: #dc3545; /* Rojo */
+    --acento-tecnologia: #17a2b8; /* Cyan */
+    --acento-deportes: #28a745; /* Verde */
+    --acento-contacto: #ffc107; /* Amarillo/Dorado */
+}
+
+/* Reset y Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/* ================================ */
+/* 2. ENCABEZADO Y NAVEGACIÓN (HEADER) */
+/* ================================ */
+.main-header {
+    background-color: var(--color-header-bg);
+    color: var(--color-texto-claro);
+    padding: 15px 0;
+    /* La línea de acento ahora será dinámica o neutra si no está en una sección */
+    border-bottom: 5px solid var(--color-principal); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+}
+
+.logo {
+    padding: 0 15px;
+}
+
+.logo-link {
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+/* Navegación */
+.nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li a {
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    padding: 15px 15px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500;
+}
+
+.nav-list li a:hover {
+    background-color: var(--color-principal);
+    color: var(--color-texto-claro);
+}
+
+/* Menú Hamburguesa (oculto por defecto) */
+.menu-toggle, .hamburger {
+    display: none;
+}
+
+/* =============================== */
+/* 3. CONTENIDO PRINCIPAL Y TÍTULOS */
+/* =============================== */
+h2 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--color-principal);
+    color: var(--color-texto);
+}
+
+/* Estilos para los Títulos de SECCIÓN (usados en las páginas secundarias) */
+/* Sobrescribe el color base para destacar la sección */
+.container h2[style*="border-bottom"] {
+    border-bottom: 3px solid; /* Mantiene el borde definido en el HTML */
+    font-weight: 800;
+}
+
+
+/* =========================== */
+/* 4. CUADRÍCULA DE NOTICIAS */
+/* =========================== */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Ítem de Noticia */
+.news-item {
+    background-color: var(--color-texto-claro);
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.news-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-item h2, .news-item h3 {
+    padding: 15px 15px 5px;
+    color: var(--color-texto); /* Color oscuro para mayor legibilidad */
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.news-item p {
+    padding: 0 15px 15px;
+    flex-grow: 1; 
+    font-size: 0.95em;
+    color: #555;
+}
+
+/* Botón "Leer Más" */
+.read-more, .submit-button {
+    display: block;
+    text-align: center;
+    background-color: var(--color-principal); /* Color base azul */
+    color: var(--color-texto-claro);
+    padding: 12px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: auto;
+}
+
+.read-more:hover, .submit-button:hover {
+    background-color: var(--color-secundario);
+}
+
+/* Noticia Destacada (en index.html) */
+.featured-news {
+    grid-column: span 2; 
+}
+
+.featured-news h2 {
+    font-size: 2.4em;
+    color: var(--color-principal);
+    margin-top: 10px;
+}
+
+/* =============================== */
+/* 5. ESTILOS DE CONTACTO (FORMULARIO) */
+/* =============================== */
+.contact-form-container {
+    background-color: var(--color-texto-claro);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-top: 20px;
+}
+
+.contact-form-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--color-texto);
+}
+
+.contact-form-container input[type="text"],
+.contact-form-container input[type="email"],
+.contact-form-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+/* Ajusta el botón de envío para que use el estilo del botón general */
+.contact-form-container .submit-button {
+    margin-top: 0;
+    border-radius: 4px;
+}
+
+/* ========================= */
+/* 6. PIE DE PÁGINA (FOOTER) */
+/* ========================= */
+.main-footer {
+    background-color: var(--color-header-bg);
+    color: #cccccc;
+    padding: 30px 0;
+    margin-top: 40px;
+}
+
+.footer-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.social-links a {
+    color: #cccccc;
+    font-size: 1.5em;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--color-principal);
+}
+
+
+/* ================================== */
+/* 7. MEDIA QUERIES (RESPONSIVIDAD) */
+/* ================================== */
+@media (max-width: 768px) {
+    /* Header en móvil */
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 0;
+    }
+    
+    .logo {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    
+    .main-nav {
+        width: 100%;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+        display: none; 
+        background-color: rgba(33, 37, 41, 0.95); 
+    }
+
+    .nav-list li a {
+        padding: 12px 15px;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .hamburger {
+        display: block;
+        font-size: 2em;
+        padding: 10px 15px;
+        cursor: pointer;
+        color: var(--color-texto-claro);
+        align-self: flex-end; 
+        margin-top: -50px; 
+        margin-right: 10px;
+    }
+
+    /* Muestra el menú cuando el checkbox está marcado */
+    .menu-toggle:checked ~ .nav-list {
+        display: flex;
+    }
+    
+    /* Grid en móvil */
+    .featured-news {
+        grid-column: span 1; 
+    }
+
+    .featured-news h2 {
+        font-size: 1.8em;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .social-links {
+        margin-top: 10px;
+    }
+}

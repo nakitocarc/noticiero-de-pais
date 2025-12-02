@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | El Noticiero del Pais</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <header class="main-header">
+        <div class="logo">
+            <h1><a href="index.html" class="logo-link">El Noticiero del Pais 🗞️</a></h1>
+        </div>
+        <nav class="main-nav">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                &#9776; </label>
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="politica.html">Política</a></li>
+                <li><a href="tecnologia.html">Tecnología</a></li>
+                <li><a href="deportes.html">Deportes</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="container">
+        <h2 style="color: var(--color-principal); margin-bottom: 20px; border-bottom: 2px solid var(--color-principal); padding-bottom: 10px;">Contáctanos | Tu Voz es Importante</h2>
+
+        <div class="contact-form-container">
+            <p style="margin-bottom: 25px; font-size: 1.1em;">
+                Estamos aquí para escuchar tus opiniones, recibir tus denuncias y responder a tus consultas. Completa el siguiente formulario para comunicarte con nuestro equipo.
+            </p>
+            
+            <form action="#" method="POST">
+                
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Tu Nombre y Apellido">
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+
+                <label for="asunto">Asunto:</label>
+                <input type="text" id="asunto" name="asunto" required placeholder="Ej. Sugerencia de Noticia, Reporte de Error, Pregunta General">
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="8" required placeholder="Escribe tu mensaje aquí..."></textarea>
+
+                <button type="submit" class="submit-button">Enviar Mensaje</button>
+            </form>
+            
+            <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;">
+                <h3 style="color: var(--color-principal);">Información Adicional</h3>
+                <p><strong>Teléfono:</strong> +54 9 11 1234 5678</p>
+                <p><strong>Dirección:</strong> Av. Principal 123, Ciudad del Periodista, País Ficticio</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Noticias Audaces. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
